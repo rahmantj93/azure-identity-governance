@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5B5B5B"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#0078D4"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8661C5"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" font-size="24" font-weight="700" fill="#1F1F1F">Azure Identity &amp; Governance Architecture</text>
+  <text x="450" y="62" text-anchor="middle" font-size="13" fill="#666">Identities, scoped access (RBAC), and policy-based governance</text>
+
+  <!-- ===== Entra ID (identity) box ===== -->
+  <rect x="60" y="90" width="300" height="150" rx="10" fill="#EAF3FB" stroke="#0078D4" stroke-width="2"/>
+  <text x="210" y="116" text-anchor="middle" font-size="15" font-weight="700" fill="#0078D4">Microsoft Entra ID (Tenant)</text>
+  <text x="210" y="134" text-anchor="middle" font-size="11" fill="#5A7A95">The directory — "who exists"</text>
+
+  <!-- User -->
+  <circle cx="135" cy="185" r="22" fill="#fff" stroke="#0078D4" stroke-width="2"/>
+  <circle cx="135" cy="177" r="7" fill="#0078D4"/>
+  <path d="M122 196 q13 -14 26 0 Z" fill="#0078D4"/>
+  <text x="135" y="225" text-anchor="middle" font-size="12" font-weight="600" fill="#333">User</text>
+
+  <!-- Group -->
+  <circle cx="225" cy="178" r="9" fill="#50A0DC" stroke="#0078D4" stroke-width="1.5"/>
+  <circle cx="248" cy="178" r="9" fill="#50A0DC" stroke="#0078D4" stroke-width="1.5"/>
+  <circle cx="236" cy="195" r="9" fill="#50A0DC" stroke="#0078D4" stroke-width="1.5"/>
+  <text x="237" y="225" text-anchor="middle" font-size="12" font-weight="600" fill="#333">Group</text>
+
+  <!-- ===== Scope hierarchy (nested) ===== -->
+  <!-- Management Group -->
+  <rect x="470" y="90" width="380" height="540" rx="10" fill="#F5F0FB" stroke="#8661C5" stroke-width="2"/>
+  <text x="490" y="116" font-size="14" font-weight="700" fill="#8661C5">Management Group</text>
+
+  <!-- Subscription -->
+  <rect x="500" y="135" width="320" height="460" rx="9" fill="#EFE7FA" stroke="#8661C5" stroke-width="1.6"/>
+  <text x="518" y="160" font-size="13" font-weight="700" fill="#6E4FB0">Subscription</text>
+  <text x="518" y="177" font-size="10.5" fill="#8A78B5">Billing &amp; resource boundary</text>
+
+  <!-- Resource Group -->
+  <rect x="530" y="195" width="262" height="370" rx="8" fill="#FbF9Ff" stroke="#8661C5" stroke-width="1.4" stroke-dasharray="5 3"/>
+  <text x="548" y="220" font-size="12.5" font-weight="700" fill="#6E4FB0">Resource Group</text>
+  <text x="548" y="236" font-size="10" fill="#8A78B5">Common scope for RBAC</text>
+
+  <!-- Resource (VM) -->
+  <rect x="560" y="260" width="200" height="90" rx="7" fill="#fff" stroke="#0078D4" stroke-width="1.6"/>
+  <rect x="585" y="285" width="40" height="34" rx="3" fill="#EAF3FB" stroke="#0078D4" stroke-width="1.6"/>
+  <rect x="592" y="293" width="26" height="14" rx="1.5" fill="#0078D4"/>
+  <text x="690" y="300" text-anchor="middle" font-size="12.5" font-weight="700" fill="#333">Resource</text>
+  <text x="690" y="318" text-anchor="middle" font-size="10.5" fill="#777">e.g. Virtual Machine</text>
+
+  <!-- Azure Policy element -->
+  <rect x="560" y="400" width="200" height="140" rx="7" fill="#FDF3E7" stroke="#D17B00" stroke-width="1.6"/>
+  <text x="660" y="424" text-anchor="middle" font-size="12.5" font-weight="700" fill="#B86A00">Azure Policy</text>
+  <text x="660" y="446" text-anchor="middle" font-size="10.5" fill="#9A6510">Enforces standards</text>
+  <text x="660" y="462" text-anchor="middle" font-size="10.5" fill="#9A6510">at scope:</text>
+  <text x="660" y="482" text-anchor="middle" font-size="10" fill="#9A6510">• require tags</text>
+  <text x="660" y="498" text-anchor="middle" font-size="10" fill="#9A6510">• restrict regions</text>
+  <text x="660" y="514" text-anchor="middle" font-size="10" fill="#9A6510">• audit / deny resources</text>
+
+  <!-- ===== RBAC arrow: identity -> hierarchy ===== -->
+  <path d="M360 165 C 410 165, 420 175, 468 200" fill="none" stroke="#0078D4" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <rect x="360" y="120" width="115" height="46" rx="6" fill="#0078D4"/>
+  <text x="417" y="138" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">RBAC</text>
+  <text x="417" y="153" text-anchor="middle" font-size="9" fill="#DCEBFA">role assignment</text>
+
+  <!-- who/what/where label -->
+  <text x="210" y="285" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0078D4">A role assignment =</text>
+  <text x="210" y="305" text-anchor="middle" font-size="11" fill="#444">WHO (user/group)</text>
+  <text x="210" y="323" text-anchor="middle" font-size="11" fill="#444">+ WHAT (role)</text>
+  <text x="210" y="341" text-anchor="middle" font-size="11" fill="#444">+ WHERE (scope)</text>
+
+  <!-- Inheritance arrow down the side -->
+  <line x1="448" y1="200" x2="448" y2="560" stroke="#8661C5" stroke-width="2.5" marker-end="url(#arrowPurple)" stroke-dasharray="6 4"/>
+  <text x="438" y="380" text-anchor="middle" font-size="11" font-weight="700" fill="#8661C5" transform="rotate(-90 438 380)">Access inherits downward through scopes</text>
+
+  <!-- Least privilege note -->
+  <rect x="60" y="380" width="300" height="90" rx="8" fill="#F4F4F4" stroke="#BBB" stroke-width="1.2"/>
+  <text x="210" y="405" text-anchor="middle" font-size="12" font-weight="700" fill="#444">Least privilege</text>
+  <text x="210" y="426" text-anchor="middle" font-size="10.5" fill="#666">Assign roles at the narrowest</text>
+  <text x="210" y="442" text-anchor="middle" font-size="10.5" fill="#666">scope that meets the need.</text>
+  <text x="210" y="458" text-anchor="middle" font-size="10.5" fill="#666">Prefer assigning to groups, not users.</text>
+
+  <!-- Footer -->
+  <text x="450" y="730" text-anchor="middle" font-size="10" fill="#999">AZ-104 Identity &amp; Governance — built by Tanzeem Rahman</text>
+</svg>

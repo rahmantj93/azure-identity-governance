@@ -9,7 +9,9 @@ This project documents a foundational identity and governance setup for a Micros
 In any cloud environment, the central risk isn't just what you build; it's who can access it and what they're allowed to do. Without deliberate identity and governance, permissions sprawl: people accumulate more access than they need, resources get created without standards, and no one can answer "who can do what, and where?" This setup addresses that by establishing clear identities (users and groups), granting access through role assignments scoped to the narrowest level needed (least privilege), and enforcing consistent standards automatically through Azure Policy.
 
 ## Architecture
-_Architecture diagram and details coming soon — see [docs/architecture.md](docs/architecture.md)._
+![Azure identity & governance architecture](screenshots/architecture-diagram.png)
+
+The setup follows Azure's scope hierarchy: identities live in Microsoft Entra ID, access is granted via RBAC role assignments (who / what / where) that inherit downward through management group → subscription → resource group → resource, and Azure Policy enforces standards at scope.
 
 ## What's included
 - **Users & groups** — Created and managed identities in Microsoft Entra ID, including
