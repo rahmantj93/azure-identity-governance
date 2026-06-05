@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
+# Secrets — never commit these
+*.env
+.env
+*.pem
+*.key
+secrets/
+*.publishsettings
+
+# Azure CLI / deployment artifacts
+*.azureauth
+.azure/
