@@ -16,6 +16,7 @@ higher scope inherit downward:
 ## How access is granted
 
 Access is granted through **role assignments**, each made up of three parts:
+
 - **Who** — a user or group (from Entra ID)
 - **What** — a role (a bundle of permissions, e.g. Reader, Contributor, Virtual Machine Contributor)
 - **Where** — the scope it applies to (management group → subscription → resource group → resource)
