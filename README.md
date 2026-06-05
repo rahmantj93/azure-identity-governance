@@ -1,5 +1,7 @@
 # Azure Identity & Governance
 
+[![Docs checks](https://github.com/rahmantj93/azure-identity-governance/actions/workflows/docs-checks.yml/badge.svg)](https://github.com/rahmantj93/azure-identity-governance/actions/workflows/docs-checks.yml)
+
 > A reference setup for managing identities, access, and governance in Microsoft Entra ID and Azure. Built as part of AZ-104 study.
 
 ## Overview
