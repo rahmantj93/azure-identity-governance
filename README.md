@@ -31,6 +31,9 @@ The setup follows Azure's scope hierarchy: identities live in Microsoft Entra ID
   scopes.
 - **Azure resource hierarchy** — Worked within the management group → subscription →
   resource group → resource model that governs how access and policy inherit downward.
+- **Governance as code** — the custom role definition, policy assignment, and an
+  apply script live in `roles/`, `policies/` and `scripts/`, so the baseline can be
+  applied to any subscription rather than clicked through the portal.
 
 ## Key concepts demonstrated
 
